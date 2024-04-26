@@ -1,0 +1,68 @@
+body {
+    height: 100%;
+    margin: 0;
+    background-color: transparent;
+    background-image: url("running_img/background.jpg");
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gameContainer {
+    width: 100%;
+    height: 550px;
+    position: relative;
+    overflow: hidden;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 15px; 
+    background-color: lightgoldenrodyellow; 
+}
+
+#spaceship {
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    bottom: 20px;
+    left: 200px;
+    background-color: transparent;
+    background-image: url('running_img/spaceship.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+
+.jump {
+    animation: jump 450ms;
+}
+
+@keyframes jump{
+    0%, 100% { 
+        bottom: 20px; 
+        right: 0px;
+    }
+    50% { 
+        bottom: 250px; 
+    }
+}
+
+#obstacle {
+    width: 35px;
+    height: 100px;
+    top: 440px;
+    left: 1400px;
+    position: absolute;
+    bottom: 20px;
+    background-color: #555;
+    animation: rock 2.5s infinite linear;
+}
+
+@keyframes rock{
+    0%{left:1400px;}
+    100%{left:-40px;}
+}
