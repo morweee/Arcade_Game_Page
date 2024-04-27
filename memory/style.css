@@ -28,6 +28,7 @@ body {
 }
 
 #score {
+    font-family: 'Pacifico', cursive;
     font-size: 20px; 
     margin-bottom: 20px;
     border: 1px solid #575a89;
@@ -96,9 +97,9 @@ body {
   color: #0a0b1a;
   padding: 10px 20px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 1200;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Times New Roman';
 }
 
 /* the game grid */
@@ -137,6 +138,7 @@ h1 {
 
 /* back-to-menu button on the top-left corner */
 #back-to-menu {
+  font-family: 'Pacifico', cursive;
     position: absolute;
     left: 85px;
     top: 77px;
@@ -169,9 +171,10 @@ h1 {
   }
   
   .start-game-button {
+    font-family: 'Pacifico', cursive;
     position: absolute;
-    left: 53px;
-    top: 145px;
+    left: 58px;
+    top: 155px;
     background-color: #16172c;
     color: #cfcfcf;
     border: 1px solid #575a89;

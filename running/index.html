@@ -7,11 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <button id="startButton" class="button-container">Start</button>
+    <button id="howToPlayButton" class="button-container">How to play</button>
     <div id="gameContainer">
-        <div id="spaceship"></div>
-        <div id="obstacle"></div>
-        <div id="ground"></div>
+        <div id="howToPlayMessage" class="how-to-play-message">
+            <p>Press the "Start" button below to play the game.<br>
+               <br>  
+               Jump over the enemies to avoid collisions with them.<br> 
+               To jump, press "space" key or click anywhere ABOVE THE GROUND.<br>
+               Game over if you fail to jump over the enemies.<br>
+               Try to score the maximum points. Good Luck!<br> 
+               <br> 
+               &#40Click anywhere outside of this window to close this message&#41
+            </p>
+        </div>
+        <div id="score">Score: 0</div>
+        <div id="spaceship" class="spaceship"></div>
+        <div id="obstacle" class="obstacle"></div>
+        <div id="obstacle_small" class="obstacle_small"></div>
+        <div id="obstacle_large" class="obstacle_large"></div>
+        <div id="ground" class="ground"></div>
+        <div id="gameOverMessage" class="game-over-message">
+            <p>Game Over!</p>
+        </div>
     </div>
+    <button id="back-to-menu" type="button">Back to Menu</button>
+    <div id="restart"></div>
 </body>
 <script src="runner_app.js"></script>
 </html>

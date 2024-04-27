@@ -186,5 +186,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // execute the game
     createBoard();
-    
 });

@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Pacifico';
+    font-style: normal;
+    src: local('Pacifico Regular');
+}
+
 body {
     height: 100%;
     margin: 0;
@@ -24,45 +30,214 @@ body {
     background-color: lightgoldenrodyellow; 
 }
 
-#spaceship {
-    width: 85px;
-    height: 85px;
+.spaceship {
+    width: 70px;
+    height: 70px;
     position: absolute;
-    bottom: 20px;
-    left: 200px;
+    bottom: 15px;
+    left: 170px;
     background-color: transparent;
     background-image: url('running_img/spaceship.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    
 }
 
 .jump {
-    animation: jump 450ms;
+    animation: jump 500ms;
 }
 
 @keyframes jump{
     0%, 100% { 
-        bottom: 20px; 
-        right: 0px;
+        bottom: 15px; 
     }
     50% { 
-        bottom: 250px; 
+        bottom: 200px; 
     }
 }
 
-#obstacle {
-    width: 35px;
-    height: 100px;
-    top: 440px;
-    left: 1400px;
+.obstacle_small {
+    width: 50px;
+    height: 50px;
+    top: 495px;
+    left: 1500px;
     position: absolute;
     bottom: 20px;
-    background-color: #555;
-    animation: rock 2.5s infinite linear;
+    background-color: transparent;
+    background-image: url('running_img/jelly.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: small_ob 4s infinite linear;
 }
 
-@keyframes rock{
-    0%{left:1400px;}
+.obstacle {
+    width: 50px;
+    height: 70px;
+    top: 470px;
+    left: 2200px;
+    position: absolute;
+    bottom: 20px;
+    background-color: transparent;
+    background-image: url('running_img/wolf.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: ob 4.05s infinite linear;
+}
+
+.obstacle_large {
+    width: 60px;
+    height: 100px;
+    top: 450px;
+    left: 3000px;
+    position: absolute;
+    bottom: 20px;
+    background-color: transparent;
+    background-image: url('running_img/robot.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: big_ob 5s infinite linear;
+}
+
+@keyframes small_ob{
+    0%{left: 1500px;}
+    100%{left: -1540px;}
+}
+
+@keyframes ob{
+    0%{left:2200px;}
+    100%{left:-840px;}
+}
+
+@keyframes big_ob{
+    0%{left:3000px;}
     100%{left:-40px;}
+}
+
+#score {
+    text-align: center;
+    margin-top: 115px;
+    color: beige;
+    font-family: 'Pacifico', cursive;
+    font-size: 40px; 
+}
+
+/* game over */
+.game-over-message {
+    display: none;
+}
+
+.game-over-message p {
+    text-align: center;
+    color: #cfcfcf;
+    font-family: 'Pacifico', cursive;
+    font-size: 70px; 
+    text-align: center;
+}
+
+.stop_moving {
+    animation-play-state: paused;
+}
+
+.start_moving {
+    animation-play-state: running;
+}
+
+.button-container:hover {
+    background-color: gainsboro; 
+    color: darkslategrey;
+    border: 2px solid darkslategrey;
+    transform: scale(1.15); 
+    cursor: pointer;
+}
+
+#startButton {
+    position: absolute;
+    bottom: 100px;
+    left: 750px;
+    background-color: #575a89;
+    color: beige;
+    border: 2px solid bisque;
+    border-radius: 5px; 
+    padding: 15px 30px;
+    font-size: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#howToPlayButton {
+    position: absolute;
+    bottom: 100px;
+    left: 550px;
+    background-color: #575a89;
+    color: beige;
+    border: 2px solid bisque;
+    border-radius: 5px; 
+    padding: 15px 30px;
+    font-size: 20px; 
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.how-to-play-message {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0f1125;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.how-to-play-message p {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.button {
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    border-radius: 5px; 
+    padding: 15px 30px;
+    font-size: 20px; 
+    cursor: pointer;
+    margin: 0 10px; 
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.button:hover {
+    background-color: #16172c; 
+    transform: scale(1.05); 
+}
+
+#restart {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+}
+
+#back-to-menu {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+#back-to-menu:hover {
+    background-color: #16172c; 
+    transform: scale(1.05); 
+    cursor: pointer;
 }
