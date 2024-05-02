@@ -87,7 +87,8 @@ header {
   .overlay p {
     font-family: "Times New Roman";
     color: white;
-    margin: 10px 0;
+    margin-right: 10px;
+    margin-left: 10px;
     font-size: 1.2rem;
     text-align: center;
     opacity: 0;

@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Flip card function
     function flipCard() {
         if (!gameStarted) {
-            showMessage("Click the \"Start the countdown\" button on the left to start!")
+            showMessage("Click the \"Start the countdown\" button to start!")
         }
         if (!gameStarted || lockBoard || gameOver) return; 
         let cardId = this.getAttribute('data-id');

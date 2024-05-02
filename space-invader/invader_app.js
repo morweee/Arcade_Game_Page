@@ -86,12 +86,14 @@ function moveInvaders() {
         gameOverMessage.innerHTML = "<p>YOU LOSE!</p>";
         gameOverMessage.style.display = "block";
         clearInterval(invadersId)
+        showRestartButton()
     }
 
     if (aliensRemoved.length === alienInvaders.length) {
         gameOverMessage.innerHTML = "<p>YOU WIN!</p>";
         gameOverMessage.style.display = "block";
         clearInterval(invadersId)
+        showRestartButton()
     }
 }
 
@@ -126,23 +128,8 @@ function shoot(e) {
             resultDisplay.innerHTML = results
         }
     }
-
     if (e.key === "ArrowUp") {
         laserId = setInterval(moveLaser, 100)
-    }
-    // Update the following lines in the moveInvaders function
-    if (squares[currentShooterIndex].classList.contains("invader")) {
-        gameOverMessage.innerHTML = "YOU LOSE!"
-        gameOverMessage.style.display = "block"
-        clearInterval(invadersId)
-        showRestartButton()
-    }
-    // Update the following lines in the moveInvaders function
-    if (aliensRemoved.length === alienInvaders.length) {
-        gameOverMessage.innerHTML = "YOU WIN!"
-        gameOverMessage.style.display = "block"
-        clearInterval(invadersId)
-        showRestartButton()
     }
 }
 
@@ -155,25 +142,30 @@ function showRestartButton() {
     restartButton.style.display = "block"
 }
 
-// start executing the game
-howToPlayButton.addEventListener("click", () => {
-    howToPlayWindow.style.display = "block"
-})
-// Close the "how to play" message window when clicking outside of the box
-document.addEventListener("click", function(event) {
-    if (!howToPlayWindow.contains(event.target) &&!howToPlayButton.contains(event.target)) {
-        howToPlayWindow.style.display = "none";
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    backToMenuButton.addEventListener('click', () => {
-        window.location.href = "../index.html";
+function gameloop(){
+    // start executing the game
+    howToPlayButton.addEventListener("click", () => {
+        howToPlayWindow.style.display = "block"
+    })
+    // Close the "how to play" message window when clicking outside of the box
+    document.addEventListener("click", function(event) {
+        if (!howToPlayWindow.contains(event.target) &&!howToPlayButton.contains(event.target)) {
+            howToPlayWindow.style.display = "none";
+        }
     });
-    const startButton = document.querySelector('.start-button');
-    const restartButton = document.querySelector('.restart-button');
 
-    startButton.addEventListener('click', startGame);
-    document.addEventListener('keydown', shoot);
-    restartButton.addEventListener('click', restartGame);
-});
+    document.addEventListener('DOMContentLoaded', () => {
+        backToMenuButton.addEventListener('click', () => {
+            window.location.href = "../index.html";
+        });
+        const startButton = document.querySelector('.start-button');
+        const restartButton = document.querySelector('.restart-button');
+
+        startButton.addEventListener('click', startGame);
+        document.addEventListener('keydown', shoot);
+        restartButton.addEventListener('click', restartGame);
+    });
+}
+
+// execute the game loop
+gameloop();

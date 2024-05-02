@@ -102,19 +102,20 @@ body {
   font-family: 'Times New Roman';
 }
 
-/* the game grid */
 .game-container {
   text-align: center;
   width: 80%;
   max-width: 600px;
 }
 
-h1 {
+.game-container h1 {
     font-size: 2rem;
     color: #ccc;
     font-family: 'Pacifico', cursive;
 }
 
+
+/* the grids */
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -190,5 +191,66 @@ h1 {
     color: darkslategray;
     transform: scale(1.05);
   }
-  
 
+/* responsive design for mobile devices: media queries */
+@media (max-width: 550px) {
+  .game-container {
+    display: flex;
+    flex-direction: column;
+  }
+    .game-container h1 {
+      display: none;
+    }
+    #back-to-menu {
+        left: 20px;
+        top: 20px;
+        font-size: 12px; 
+        padding: 10px 15px;
+    }
+    .start-game-button {
+        left: 131px;
+        top: 125px;
+        font-size: 12px; 
+        padding: 10px 15px;
+    }
+    .grid {
+      margin-top: 330px;
+      margin-bottom: 60px;
+    }
+    .timer {
+      position: absolute;
+      top: 20px;
+      left: 135px;
+    }
+    .score-container {
+      position: absolute;
+      margin-top: 700px;
+      left: 100px;
+      margin-bottom: 50px;
+    }
+
+    #score {
+      margin-top: 130px;
+      font-family: 'Pacifico', cursive;
+      font-size: 12px;
+      border: 1px solid #575a89;
+      background-color: #0a0b1a;
+      padding: 10px;
+    }
+
+    #matched-pairs {
+      display: grid;
+      margin-left: 10px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 5px;
+    }
+
+    #matched-pairs img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      margin-bottom: 50px;
+      border: 1px solid #575a89;
+      border-radius: 5px;
+    }
+}
