@@ -43,7 +43,7 @@ body {
 }
 
 .jump {
-    animation: jump 500ms;
+    animation: jump 600ms;
 }
 
 @keyframes jump{
@@ -66,7 +66,7 @@ body {
     background-image: url('running_img/jelly.jpg');
     background-size: contain;
     background-repeat: no-repeat;
-    animation: small_ob 4s infinite linear;
+    animation: small_ob 3.94s infinite linear;
 }
 
 .obstacle {

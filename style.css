@@ -2,7 +2,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
+    /* background: #f4f4f4; */
+    background: darkgray;
 }
 
 @font-face {
@@ -14,25 +15,10 @@ body {
 
 header {
     font-family: 'Pacifico', cursive;
-    background: #333;
+    background: rgb(8, 7, 52);
     color: #fff;
     padding: 10px 20px;
     text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
 }
 
 .game-grid {
@@ -44,11 +30,12 @@ nav ul li a {
 }
 
 .game-tile {
-    background: #F6F5F2;
+    background: lightsteelblue;
     position: relative;
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 20px 20px 0 20px;
     text-align: center;
+    overflow: hidden;
 }
 
 .game-tile a {
@@ -57,11 +44,12 @@ nav ul li a {
 
 .game-tile h1 {
     font-family: 'Pacifico', cursive;
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 2rem;
+    margin-top: 5px;
     color: #333;
     text-decoration: none;
     font-weight: bold;
+    transform: rotate(-2.5deg);
 }
 
 .game-tile img {
@@ -79,27 +67,29 @@ nav ul li a {
     height: 0;
     background-color: rgba(0, 0, 0, 0.75);
     display: flex;
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
     text-align: center;
     transition: height 0.55s ease;
   }
-
+  
   .overlay h1 {
-    font-family: "Times New Roman";
+    font-family: 'Pacifico', cursive;
     color: white;
-    margin: 0;
+    margin: 10px 0;
     font-size: 2rem;
     opacity: 0;
     transition: opacity 0.5s ease;
     text-align: center;
   }
-  
+
   .overlay p {
     font-family: "Times New Roman";
     color: white;
-    margin: 0;
-    font-size: 2rem;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-align: center;
     opacity: 0;
     transition: opacity 0.5s ease;
     text-align: center;
@@ -107,20 +97,31 @@ nav ul li a {
   
   .game-tile:hover .overlay {
     height: 100%;
+    opacity: 1;
   }
   
+  .game-tile:hover .overlay h1 {
+    opacity: 1;
+  }
+
   .game-tile:hover .overlay p {
     opacity: 1;
   }
 
-
 footer {
     text-align: center;
     padding: 2px 0;
-    background: #222;
+    background: rgb(8, 6, 76);
     color: #fff;
     position: fixed;
     width: 100%;
     bottom: 0;
 }
 
+.game-info {
+    font-family: 'Times News Roman';
+    line-height: 1.25s;
+    font-size: 1.25rem;
+    text-align: left;
+    padding: 1.5px;
+}

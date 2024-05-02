@@ -1,0 +1,207 @@
+body {
+    background-image: url('invader_img/background.jpg');
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	margin-top: 30px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-image: url('invader_img/grid_background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: 650px;
+    height: 650px;
+}
+
+.grid {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid div {
+    width: 40px;
+    height: 40px;
+}
+
+.invader {
+    background-color: transparent;
+	background-image: url('invader_img/alien.jpg');
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.shooter {
+    background-color: transparent;
+	background-image: url('invader_img/shooter.jpg');
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.laser {
+    background-color: transparent;
+	background-image: url('invader_img/bullet.jpg');
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.boom {
+    background-color: transparent;
+	background-image: url('invader_img/explosion.jpg');
+	background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.start-button {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.start-button:hover {
+    background-color: gainsboro; 
+    color: darkslategrey;
+    border: 2px solid darkslategrey;
+    transform: scale(1.15); 
+    cursor: pointer;
+}
+
+.restart-button {
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.restart-button:hover {
+    background-color: gainsboro; 
+    color: darkslategrey;
+    border: 2px solid darkslategrey;
+    transform: scale(1.15); 
+    cursor: pointer;
+}
+
+#back-to-menu {
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, transform 0.3s ease;
+}
+
+#back-to-menu:hover {
+    background-color: #16172c; 
+    transform: scale(1.05); 
+    cursor: pointer;
+}
+
+.how-to-play-window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    display: none;
+}
+
+.how-to-play-button {
+    position: absolute;
+    top: 60%;
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #0a0b1a;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.how-to-play-button:hover {
+    background-color: gainsboro; 
+    color: darkslategrey;
+    border: 2px solid darkslategrey;
+    transform: scale(1.15); 
+    cursor: pointer;
+}
+
+.how-to-play-window {
+    max-width: 600px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-color: #0f1125;
+    color: #cfcfcf;
+    border: 1px solid #575a89;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+.how-to-play-window p {
+    margin: 0;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+/* game over */
+.game-over-message {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #cfcfcf;
+    font-size: 70px; 
+}
+
+footer {
+    text-align: center;
+    background: rgb(8, 6, 76);
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}

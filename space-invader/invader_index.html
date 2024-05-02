@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Invaders</title>
+    <link rel="stylesheet" href="invader_style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1 class="results">0</h1>
+        <button class="start-button">Start Game</button>
+        <button class="how-to-play-button">How to play</button>
+        <div class="grid"></div>
+        <button class="restart-button" style="display: none;">Restart Game</button>
+        <div class="how-to-play-window">
+            <p>Press the "Start Game" button to play the game.<br><br>
+                The invaders are moving down the screen, <br>and you have to shoot to destroy them before they reach the bottom.<br><br>
+                Use the left and right arrow keys to move the shooter, <br>and press the up arrow key to shoot.<br><br>
+                The game is over if the invaders reach the bottom of the screen.<br><br>
+               &#40Click anywhere outside of this window to close this message&#41 
+            </p>
+        </div>
+        <div class="game-over-message"></div>
+    </div>
+    <button id="back-to-menu" type="button">Back to Menu</button>
+    <footer>
+        <p>Copyright © 2020 Ania Kubow</p>
+    </footer>
+</body>
+<script src="invader_app.js"></script>
+</html>

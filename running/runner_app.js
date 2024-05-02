@@ -34,7 +34,7 @@ function jump_space(event) {
     setTimeout(function(){
         spaceship.classList.remove("jump");
         spaceshipJumping = false;
-    }, 500);
+    }, 600);
 }
 
 function jump_click() {
@@ -101,7 +101,8 @@ function checkCollision() {
         left: spaceshipRect.left + OFFSET.left
     };
 
-    // Check if the rectangles overlap
+    // Check if the runner's border overlap with the obstacles' borders
+    // if so, game over
     if (
         (small_obstacleRect.left < spaceshipRect.right &&
         small_obstacleRect.right > spaceshipRect.left &&
@@ -126,18 +127,22 @@ function checkCollision() {
     document.getElementById('score').textContent = `Score: ${curr_score}`;
 } 
 
-// game-executing section
-stop_animation();
-howToPlayButton.addEventListener("click", showHowToPlayMessage);
-// Close the "how to play" message window when clicking outside of the box
-document.addEventListener("click", function(event) {
-    if (!howToPlayMessage.contains(event.target) &&!howToPlayButton.contains(event.target)) {
-        howToPlayMessage.style.display = "none";
-    }
-});
-startButton.addEventListener("click", startGame);
-document.addEventListener('DOMContentLoaded', () => {
-    backToMenuButton.addEventListener('click', () => {
-        window.location.href = "../index.html";
+function gameloop(){
+    // game-executing section
+    stop_animation();
+    howToPlayButton.addEventListener("click", showHowToPlayMessage);
+    // Close the "how to play" message window when clicking outside of the box
+    document.addEventListener("click", function(event) {
+        if (!howToPlayMessage.contains(event.target) &&!howToPlayButton.contains(event.target)) {
+            howToPlayMessage.style.display = "none";
+        }
     });
-});
+    startButton.addEventListener("click", startGame);
+    document.addEventListener('DOMContentLoaded', () => {
+        backToMenuButton.addEventListener('click', () => {
+            window.location.href = "../index.html";
+        });
+    });
+}
+
+gameloop();
