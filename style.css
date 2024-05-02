@@ -38,6 +38,9 @@ header {
     padding: 20px 20px 0 20px;
     text-align: center;
     overflow: hidden;
+    flex-grow: 1;      
+    flex-basis: calc(33% - 40px);
+    box-sizing: border-box;
 }
 
 .game-tile a {
