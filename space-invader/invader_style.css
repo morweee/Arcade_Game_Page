@@ -63,9 +63,14 @@ body {
     background-repeat: no-repeat;
 }
 
+.moving {
+    display: none;
+}
+
 .start-button {
     position: absolute;
     top: 50%;
+    left: 38%;
     text-align: center;
     font-size: 24px;
     padding: 10px 20px;
@@ -141,11 +146,13 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     padding: 20px;
     display: none;
+    z-index: 10;
 }
 
 .how-to-play-button {
     position: absolute;
-    top: 60%;
+    top: 50%;
+    left: 51%;
     text-align: center;
     font-size: 24px;
     padding: 10px 20px;
@@ -204,4 +211,84 @@ footer {
     position: fixed;
     width: 100%;
     bottom: 0;
+}
+
+/* responsive design for mobile devices: media queries */
+@media (max-width: 550px) {
+    .game-container {
+        margin-top: 80px;
+        width: 310px;
+        height: 350px;
+    }
+    .grid {
+        width: 300px;
+        height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .grid div {
+        width: 20px;
+        height: 20px;
+    }
+
+    #back-to-menu {
+        padding: 10px 10px;
+        font-size: 12px;
+        left: 20px;
+        top: 20px;
+    }
+
+    .moving {
+        display: flex;
+        gap: 70px;
+        border-radius: 10px;
+    }
+    .moving .left, .moving .right{
+        text-align: center;
+        font-size: 24px;
+        padding: 8px 8px;
+        border: none;
+        border-radius: 10px;
+        background-color: #0a0b1a;
+        color: #cfcfcf;
+        border: 1px solid #575a89;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .moving .shoot {
+        text-align: center;
+        font-size: 24px;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 10px;
+        background-color: #0a0b1a;
+        color: #cfcfcf;
+        border: 1px solid #575a89;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .start-button {
+        padding: 10px 10px;
+        font-size: 12px;
+        top: 25%;
+        left: 40%;
+    }
+    .how-to-play-button {
+        padding: 10px 10px;
+        font-size: 12px;
+        top: 32%;
+        left: 40%;
+    }
+    .how-to-play-window {
+        width: 300px;
+    }
+    .how-to-play-window p {
+        font-size: 13px;
+        text-align: center;
+    }
+    footer p{
+        font: 10px;
+    }
 }

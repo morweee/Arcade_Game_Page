@@ -23,8 +23,8 @@ header {
 
 .game-grid {
     display: flex;
+    flex-grow: 1;
     flex-direction: row;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;

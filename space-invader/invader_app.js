@@ -6,6 +6,11 @@ const howToPlayWindow = document.querySelector(".how-to-play-window")
 const closeButton = document.querySelector(".close-button")
 const gameOverMessage = document.querySelector(".game-over-message")
 
+// buttons to move the shooters in the mobile version
+const buttonRight = document.querySelector(".right")
+const buttonLeft = document.querySelector(".left")
+const buttonFire = document.querySelector(".shoot")
+
 let backToMenuButton = document.querySelector('#back-to-menu');
 let currentShooterIndex = 202
 const width = 15
@@ -55,6 +60,23 @@ function moveShooter(e) {
     squares[currentShooterIndex].classList.add("shooter")
 }
 
+function moveShooterButton() {
+    buttonRight.addEventListener("click", () => {
+        if (currentShooterIndex % width < width - 1) {
+            squares[currentShooterIndex].classList.remove("shooter")
+            currentShooterIndex += 1
+            squares[currentShooterIndex].classList.add("shooter")
+        }
+    })
+    buttonLeft.addEventListener("click", () => {
+        if (currentShooterIndex % width!== 0) {
+            squares[currentShooterIndex].classList.remove("shooter")
+            currentShooterIndex -= 1
+            squares[currentShooterIndex].classList.add("shooter")
+        }
+    })
+}
+
 function moveInvaders() {
     const leftEdge = alienInvaders[0] % width === 0
     const rightEdge = alienInvaders[alienInvaders.length - 1] % width === width - 1
@@ -102,6 +124,7 @@ function startGame() {
     howToPlayButton.style.display = "none"
     invadersId = setInterval(moveInvaders, 600)
     document.addEventListener("keydown", moveShooter)
+    moveShooterButton()
     squares[currentShooterIndex].classList.add("shooter")
 }
 
@@ -131,6 +154,32 @@ function shoot(e) {
     if (e.key === "ArrowUp") {
         laserId = setInterval(moveLaser, 100)
     }
+}
+
+function shootButton() {
+    let laserId;
+    let currentLaserIndex = currentShooterIndex;
+
+    function moveLaser() {
+        squares[currentLaserIndex].classList.remove("laser")
+        currentLaserIndex -= width
+        squares[currentLaserIndex].classList.add("laser")
+
+        if (squares[currentLaserIndex].classList.contains("invader")) {
+            squares[currentLaserIndex].classList.remove("laser")
+            squares[currentLaserIndex].classList.remove("invader")
+            squares[currentLaserIndex].classList.add("boom")
+
+            setTimeout(() => squares[currentLaserIndex].classList.remove("boom"), 300)
+            clearInterval(laserId)
+
+            const alienRemoved = alienInvaders.indexOf(currentLaserIndex)
+            aliensRemoved.push(alienRemoved)
+            results++
+            resultDisplay.innerHTML = results
+        }
+    }
+    laserId = setInterval(moveLaser, 100)
 }
 
 function restartGame() {
@@ -163,6 +212,7 @@ function gameloop(){
 
         startButton.addEventListener('click', startGame);
         document.addEventListener('keydown', shoot);
+        buttonFire.addEventListener("click", shootButton);
         restartButton.addEventListener('click', restartGame);
     });
 }
