@@ -22,11 +22,13 @@ header {
 }
 
 .game-grid {
-    display: grid;
+    display: flex;
+    flex-direction: row;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
     padding: 20px;
     justify-content: center;
+    margin-bottom: 5%;
 }
 
 .game-tile {
@@ -111,6 +113,7 @@ header {
 
 footer {
     text-align: center;
+    margin-top: 5%;
     padding: 2px 0;
     background: rgb(8, 6, 76);
     color: #fff;
@@ -125,4 +128,17 @@ footer {
     font-size: 1.25rem;
     text-align: left;
     padding: 1.5px;
+}
+
+/* responsive design for mobile devices: media queries */
+@media (max-width: 550px) {
+  .game-grid {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+    margin-bottom: 15%;
+}
 }
